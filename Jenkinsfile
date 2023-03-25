@@ -52,7 +52,7 @@ pipeline {
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                sh 'sudo kubectl apply -f train-schedule-kube-canary.yml train-schedule-kube.yml'
+                sh 'sudo kubectl apply -f train-schedule-kube-canary.yml'
                 sh 'sudo kubectl apply -f train-schedule-kube.yml'
             }
         }
