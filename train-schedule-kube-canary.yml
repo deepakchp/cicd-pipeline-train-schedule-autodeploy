@@ -5,8 +5,8 @@ metadata:
   name: train-schedule-service-canary
 spec:
   ports:
-  - nodePort: 30000
-    port: 8080
+  - nodePort: 30001
+    port: 9080
   selector:
     app: train-schedule
     track: canary
@@ -35,13 +35,13 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 9080
           initialDelaySeconds: 15
           periodSeconds: 10
           timeoutSeconds: 1
         name: train-schedule
         ports:
-        - containerPort: 8080
+        - containerPort: 9080
         resources:
           requests:
             cpu: 200m
